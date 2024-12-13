@@ -24,8 +24,12 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     curl \
     openjdk-11-jre-headless \
     ca-certificates-java \
- && /var/lib/dpkg/info/ca-certificates-java.postinst configure \
- && rm -rf /var/lib/apt/lists/*
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Manually create the missing Java certificates directory and run the post-install script.
+RUN mkdir -p /etc/ssl/certs/java \
+ && ln -s /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/java/cacerts \
+ && /var/lib/dpkg/info/ca-certificates-java.postinst configure
 
 # Install the application server and project dependencies.
 RUN pip install "gunicorn==20.0.4"
