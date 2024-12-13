@@ -5,9 +5,9 @@ from os.path import join, normpath
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cms',
-        'PASSWORD': os.environ.get("PASSWORD"),
-        'USER': 'cms_user',
+        'NAME': os.environ.get("db_user"),
+        'PASSWORD': os.environ.get("db_password"),
+        'USER': os.environ.get("db_user"),
         'HOST': 'db-mysql-nyc3-97229-do-user-2508039-0.b.db.ondigitalocean.com',
         'PORT': '25060',
     }
@@ -53,7 +53,7 @@ EMAIL_HOST_PASSWORD = os.environ.get("SENDGRID_PASSWORD")  # new
 EMAIL_PORT = 587  # new
 EMAIL_USE_TLS = True  # new
 
-AWS_STORAGE_BUCKET_NAME = 'open-build'
+AWS_STORAGE_BUCKET_NAME = 'eileen'
 AWS_ACCESS_KEY_ID = 'DO00MW9V6QPPJKVCGHYA'
 AWS_SECRET_ACCESS_KEY = os.environ.get("SPACES_SECRET")
 AWS_S3_CUSTOM_DOMAIN = 'cms-static.nyc3.digitaloceanspaces.com' + "/" + AWS_STORAGE_BUCKET_NAME
