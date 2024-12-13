@@ -22,21 +22,14 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     default-libmysqlclient-dev \
     default-mysql-client \
     curl \
-    openjdk-11-jre-headless \
-    ca-certificates-java \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Manually create the missing Java certificates directory and run the post-install script.
-RUN mkdir -p /etc/ssl/certs/java \
- && ln -s /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/java/cacerts \
- && /var/lib/dpkg/info/ca-certificates-java.postinst configure
 
 # Install the application server and project dependencies.
 RUN pip install "gunicorn==20.0.4"
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-# Install Metabase.
+# Install Metabase standalone.
 RUN curl -o /metabase.jar https://downloads.metabase.com/v0.46.6/metabase.jar
 
 # Use /app folder as a directory where the source code is stored.
