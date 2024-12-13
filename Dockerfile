@@ -27,7 +27,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 
 # Install the application server and project dependencies.
 RUN pip install "gunicorn==20.0.4"
-COPY ob-cms/requirements.txt /
+COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
 # Install Metabase.
