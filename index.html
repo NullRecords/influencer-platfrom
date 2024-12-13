@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hola </title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="static/img/favicon.png" rel="icon">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="static/css/style.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        #chat {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        #messages {
+            margin-bottom: 10px;
+        }
+        .translation {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meet </h1>
+
+    <div id="meet"></div>
+
+    <div id="chat">
+        <h2>Chat</h2>
+        <div id="messages"></div>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <!-- Add more language options as needed -->
+        </select>
+        <input type="text" id="messageInput" placeholder="Type your message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    
+    <!-- Include Jitsi Meet External API Script -->
+    <script src="static/external_api.js"></script>
+
+    <!-- Your Jitsi Configuration and Initialization -->
+    <script>
+        const domain = 'meet.jit.si';
+        const options = {
+            roomName: 'YourUniqueRoomName',
+            width: '100%',
+            height: '800px',
+            configOverwrite: {
+                prejoinPageEnabled: false,
+                disableInviteFunctions: true,
+                disableChat: true,
+                toolbarButtons: [],
+            },
+            interfaceConfigOverwrite: {
+                filmStripOnly: false,
+                DEFAULT_BACKGROUND: '#000000',
+            },
+            parentNode: document.querySelector('#meet'),
+        };
+        const api = new JitsiMeetExternalAPI(domain, options);
+    </script>
+
+    <!-- Include Your Custom JavaScript (script.js) -->
+    <script src="static/script.js"></script>
+</body>
+</html>

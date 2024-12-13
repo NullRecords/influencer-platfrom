@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<form class="formulario" action="/registration" action="../../form-result.php"  method="post" enctype="multipart/form-data" target="_blank">
+
+
+<section class="form-register">
+    <h4>Contact</h4>
+    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Your Full-name">
+    <input class="controls" type="email" name="correo" id="correo" placeholder="Your E-mail">
+    <input class="controls" type="url" name="url" id="url" placeholder="Your Linkedin">
+    <input class="controls" type="text" name="url" id="url" placeholder="Describe yourself">
+    <div class="custom-input-file">
+      <input type="file" id="resume" class="input-file" value="Your Resume" >
+      Your Resume
+      </div>
+    <input class="botons" type="submit" value="submit">
+  </section>
+
+
+{% endblock content %}

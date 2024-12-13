@@ -1,2 +1,2 @@
-# influencer-platfrom
-Open Source Influencer, artist or service based platform
+# hola
+meet and real time chat translation
