@@ -16,8 +16,18 @@ from django.contrib import messages
 from .models import Signature
 from .forms import SignatureForm
 import re
+import os
+from django.conf import settings
+from django.urls import path
+from django.shortcuts import render
+from django.http import JsonResponse
+from googletrans import Translator
+import speech_recognition as sr
 
 from django.shortcuts import render, redirect
+
+# Translator instance
+translator = Translator()
 
 #redirect to spanish if the url contains colombia.open.build
 def index(req):
@@ -90,3 +100,29 @@ def submit_project(request):
         form = ProjectSubmissionForm()
     return render(request, 'home/submit_project.html', {'form': form})
 
+def translate_audio(request):
+    if request.method == 'POST' and 'audio' in request.FILES:
+        recognizer = sr.Recognizer()
+        audio_file = request.FILES['audio']
+        with sr.AudioFile(audio_file) as source:
+            audio_data = recognizer.record(source)
+            try:
+                # Speech-to-text
+                text = recognizer.recognize_google(audio_data)
+                # Translate text
+                translated_text = translator.translate(text, dest='en').text
+                return JsonResponse({'success': True, 'text': text, 'translation': translated_text})
+            except Exception as e:
+                return JsonResponse({'success': False, 'error': str(e)})
+    return JsonResponse({'success': False, 'error': 'Invalid request'})
+
+def translate_chat(request):
+    if request.method == 'POST':
+        original_message = request.POST.get('message', '')
+        target_language = request.POST.get('language', 'en')
+        try:
+            translated_message = translator.translate(original_message, dest=target_language).text
+            return JsonResponse({'success': True, 'translation': translated_message})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+    return JsonResponse({'success': False, 'error': 'Invalid request'})

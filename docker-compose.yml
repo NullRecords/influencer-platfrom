@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  django-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: wagtail_user
+      MYSQL_PASSWORD: wagtail_password
+      MYSQL_DATABASE: wagtail_db
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: wagtail_db
+      MYSQL_USER: wagtail_user
+      MYSQL_PASSWORD: wagtail_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  metabase:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: mysql
+      MB_DB_DBNAME: wagtail_db
+      MB_DB_HOST: db
+      MB_DB_PORT: 3306
+      MB_DB_USER: wagtail_user
+      MB_DB_PASS: wagtail_password
+    depends_on:
+      - db
+
+  jitsi:
+    image: jitsi/jitsi-meet
+    environment:
+      ENABLE_AUTH: 0
+      ENABLE_GUESTS: 1
+    ports:
+      - "8443:8443"
+      - "10000:10000/udp"
+    depends_on:
+      - db
+
+volumes:
+  mysql-data:

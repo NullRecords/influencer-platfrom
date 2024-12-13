@@ -10,6 +10,8 @@ from wagtail.documents import urls as wagtaildocs_urls
 from search import views as search_views
 from puput import urls as puput_urls
 from home.views import SignatureCreateView, apply_to_mentor, submit_project  # Import your new views here
+from django.views.generic import TemplateView  # Import TemplateView
+from home.views import translate_audio, translate_chat
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
@@ -24,7 +26,11 @@ urlpatterns = [
     path('apply-to-mentor/', apply_to_mentor, name='apply-to-mentor'),  # New URL pattern for mentor application
     path('apply-as-student/', apply_to_mentor, name='apply-as-student'),  # New URL pattern for mentor application
     path('submit-project/', submit_project, name='submit-project'),  # New URL pattern for project submission
-
+    
+    path('Hey/index.html', TemplateView.as_view(template_name='Hey/index.html'), name='hey-index'),  # Link to static HTML file
+    path('Hey/<path:path>', TemplateView.as_view(template_name='Hey/index.html'), name='hey-static'),  # Link to static files
+    path('translate_audio/', translate_audio, name='translate_audio'),
+    path('translate_chat/', translate_chat, name='translate_chat'),
 ]
 
 if settings.DEBUG:
