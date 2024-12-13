@@ -23,6 +23,8 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     default-mysql-client \
     curl \
     openjdk-11-jre-headless \
+    ca-certificates-java \
+ && /var/lib/dpkg/info/ca-certificates-java.postinst configure \
  && rm -rf /var/lib/apt/lists/*
 
 # Install the application server and project dependencies.
