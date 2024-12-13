@@ -22,7 +22,18 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     default-libmysqlclient-dev \
     default-mysql-client \
     curl \
+    gnupg2 \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Add Jitsi repository and install Jitsi components.
+RUN curl https://download.jitsi.org/jitsi-key.gpg.key | apt-key add - && \
+    echo "deb https://download.jitsi.org stable/" > /etc/apt/sources.list.d/jitsi-stable.list && \
+    apt-get update && apt-get install -y \
+    nginx \
+    prosody \
+    jicofo \
+    jitsi-videobridge2 \
+ && rm -rf /var/lib/apt/lists/*
 
 # Install the application server and project dependencies.
 RUN pip install "gunicorn==20.0.4"
@@ -40,14 +51,6 @@ RUN chown wagtail:wagtail /app
 
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
-
-# Install Jitsi dependencies.
-RUN apt-get update && apt-get install -y \
-    nginx \
-    prosody \
-    jicofo \
-    jitsi-videobridge2 \
- && rm -rf /var/lib/apt/lists/*
 
 # Configure Jitsi Meet.
 RUN mkdir -p /etc/jitsi && \
