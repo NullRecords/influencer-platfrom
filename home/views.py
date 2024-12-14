@@ -14,7 +14,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from .models import Signature
-from .forms import SignatureForm
 import re
 import os
 from django.conf import settings
@@ -59,46 +58,8 @@ def send_notification_email(subject, message):
 
 
 
-class SignatureCreateView(CreateView):
-    model = Signature
-    template_name = 'home/signature.html'
-    success_url = '/'  # Replace with the desired URL
-    form_class = SignatureForm
-
-    def form_valid(self, form):
-        
-        form.save()
-        messages.success(self.request, 'Success, Your Signature has been Submitted!')
-        
-        # Send Email
-        subject = "New Open Build Framework Form Submission" 
-        message = "A new form has been submitted from " + str(form.cleaned_data['email'])
-        send_notification_email(subject, message)
-        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
-
-
 from django.shortcuts import render
-from .forms import MentorApplicationForm, ProjectSubmissionForm
-
-def apply_to_mentor(request):
-    if request.method == 'POST':
-        form = MentorApplicationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'application_submitted.html')
-    else:
-        form = MentorApplicationForm()
-    return render(request, 'home/apply_to_mentor.html', {'form': form})
-
-def submit_project(request):
-    if request.method == 'POST':
-        form = ProjectSubmissionForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'submission_success.html')
-    else:
-        form = ProjectSubmissionForm()
-    return render(request, 'home/submit_project.html', {'form': form})
+from django.http import JsonResponse
 
 def translate_audio(request):
     if request.method == 'POST' and 'audio' in request.FILES:
