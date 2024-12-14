@@ -15,3 +15,5 @@ googletrans==4.0.0-rc1
 speechrecognition  
 django-el-pagination==3.2.4
 sentry-sdk
+django-storages
+boto3
