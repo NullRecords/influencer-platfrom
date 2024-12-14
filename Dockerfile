@@ -23,11 +23,13 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     default-mysql-client \
     curl \
     gnupg2 \
+    debconf-utils \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Add Jitsi repository and install Jitsi components.
+# Add Jitsi repository and preconfigure hostname for jitsi-videobridge2
 RUN curl https://download.jitsi.org/jitsi-key.gpg.key | apt-key add - && \
     echo "deb https://download.jitsi.org stable/" > /etc/apt/sources.list.d/jitsi-stable.list && \
+    echo "jitsi-videobridge2 jitsi-videobridge/jvb-hostname string localhost" | debconf-set-selections && \
     mkdir -p /usr/share/man/man1 && \
     apt-get update && apt-get install -y \
     openjdk-11-jre-headless \
