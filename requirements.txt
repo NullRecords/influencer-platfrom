@@ -1,5 +1,6 @@
-Django
-wagtail
+Django==4.2.17
+wagtail==6.2.3
+wagtail-markdown==0.11.1
 django-social-share==2.2.1
 puput==2.1.1
 mysqlclient==2.1.0
