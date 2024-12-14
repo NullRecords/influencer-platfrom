@@ -70,7 +70,7 @@ CMD set -xe; \
     python manage.py migrate --noinput; \
     gunicorn mysite.wsgi:application & \
     java -jar /metabase.jar & \
-    service nginx start || (cat /var/log/nginx/error.log && exit 1); \
+    service nginx start \
     service prosody start && \
     service jicofo start && \
     service jitsi-videobridge2 start && \
