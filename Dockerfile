@@ -60,6 +60,8 @@ COPY --chown=wagtail:wagtail . .
 RUN mkdir -p /etc/jitsi && \
     echo "Configuring Jitsi..." > /etc/jitsi/README
 
+RUN chown -R wagtail:wagtail /var/log/nginx /var/run
+
 # Use user "wagtail" to run the Django server.
 USER wagtail
 
