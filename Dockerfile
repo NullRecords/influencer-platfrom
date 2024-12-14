@@ -28,6 +28,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 # Add Jitsi repository and install Jitsi components.
 RUN curl https://download.jitsi.org/jitsi-key.gpg.key | apt-key add - && \
     echo "deb https://download.jitsi.org stable/" > /etc/apt/sources.list.d/jitsi-stable.list && \
+    mkdir -p /usr/share/man/man1 && \
     apt-get update && apt-get install -y \
     openjdk-11-jre-headless \
     nginx \
