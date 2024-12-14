@@ -65,7 +65,6 @@ USER wagtail
 
 # Start services in a single container.
 CMD set -xe; \
-    python manage.py migrate --noinput; \
     gunicorn mysite.wsgi:application & \
     java -jar /metabase.jar & \
     service nginx start && \
