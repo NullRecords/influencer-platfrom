@@ -65,10 +65,12 @@ USER wagtail
 
 # Start services in a single container.
 CMD set -xe; \
+    python manage.py migrate --noinput; \
     gunicorn mysite.wsgi:application & \
     java -jar /metabase.jar & \
-    service nginx start && \
+    service nginx start || (cat /var/log/nginx/error.log && exit 1); \
     service prosody start && \
     service jicofo start && \
     service jitsi-videobridge2 start && \
     tail -f /dev/null
+
