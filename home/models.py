@@ -7,6 +7,12 @@ from wagtail.models import Page
 class HomePage(Page):
     pass
 
+class SchedulePage(Page):
+    pass
+
+class HealthPage(Page):
+    pass
+
 class AboutPage(Page):
     pass
 

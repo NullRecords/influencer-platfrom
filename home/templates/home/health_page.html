@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<main class="contenedor">
+	<h3 class="centrar-texto">Personal Health and Fitness Plan </h3></br>
+
+	<div class="sobre-nosotros">
+		<div class="sobre-nosotros__imagen">
+			<img class="guy" src="{% static 'img/guy.png' %}" alt="imagen nosotros">
+		</div>
+
+		<div class="sobre-nosotros__texto">
+			<p>Use my trained and configured AI assistant to create a personalized health and fitness plan that fits your lifestyle and goals. </p>
+			<div class="entrada__contenido">
+				<h4 class="no-margin"></h4>
+			</br>
+				<a href="/about/contact/" class="boton boton--secundario">Contact us</a>
+			</div>
+		</div>
+
+
+	</div>
+</main>
+
+<main class="contenedor">
+	<h3 class="centrar-texto">Partners </h3>
+</br>
+	<div class="sobre-nosotros">
+	 <div class="navegacion">
+		<p></p>
+
+	 </div>
+
+	 <div class="sobre-nosotros__texto">
+		<div class="entrada__contenido">
+			<h4></h4>
+			<a href="/about/contact/" class="boton boton--secundario">Join us</a>
+		</div>
+	 </div>
+   </div>
+</main>
+
+<div class="team-cards">
+	<h3 class="centrar-texto">Team</h3>
+</div>
+
+
+<div class="container-card">
+	<div class="card">
+		<figure>
+			<img src="{% static 'img/angi.jpg' %}">
+		</figure>
+		<div class="contenido-card">
+			<h3>Fintess Team Member 1</h3>
+			<p>Someone healthy and fit who does stuff</p>
+			<a href="https://www.instagram.com">Follow on Instagram</a>
+
+		</div>
+	</div>
+	<div class="card">
+		<figure>
+			<img src="{% static 'img/angi.jpg' %}">
+		</figure>
+		<div class="contenido-card">
+			<h3>Fintess Team Member 1</h3>
+			<p>Someone healthy and fit who does stuff</p>
+			<a href="https://www.instagram.com">Follow on Instagram</a>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock content %}
