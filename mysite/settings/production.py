@@ -17,7 +17,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['eileen-app-jlxek.ondigitalocean.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://eileen-app-jlxek.ondigitalocean.app','https://cms-static.nyc3.digitaloceanspaces.com']
+CSRF_TRUSTED_ORIGINS = ['https://eileen-app-jlxek.ondigitalocean.app','https://cms-static.nyc3.digitaloceanspaces.com','https://source.unsplash.com']
 
 try:
     from .local import *
