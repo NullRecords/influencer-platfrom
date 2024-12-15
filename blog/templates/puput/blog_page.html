@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags wagtailmedia_tags %}
+
+{% block content %}
+  <div class="blog-post">
+    <div class="header">
+      {% if page.header_image %}
+        <img src="{{ page.header_image.url }}" alt="{{ page.title }}">
+      {% endif %}
+      <h1>{{ page.title }}</h1>
+      <p>By {{ page.author }} | {{ page.date }}</p>
+    </div>
+
+    <div class="content">
+      {% for block in page.content %}
+        {% include_block block %}
+      {% endfor %}
+    </div>
+
+    <div class="social-links">
+      <h3>Follow on Social Media</h3>
+      {% for block in page.content %}
+        {% if block.block_type == 'social_links' %}
+          <ul>
+            {% for social_link in block.value %}
+              <li>
+                <a href="{{ social_link.url }}" target="_blank">{{ social_link.platform }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
