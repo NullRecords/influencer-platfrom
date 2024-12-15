@@ -1,284 +1,153 @@
 {% load static %}
-  <!-- ======= Hero Section ======= -->
-  <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
+<!-- ======= Hero Section ======= -->
+<main class="main">
 
-      <img src="{% static 'assets/img/hero-bg.jpg'%}" alt="" data-aos="fade-in" class="">
+  <!-- Hero Section -->
+  <section id="hero" class="hero section">
 
-      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h2>Welcome to Siimple</h2>
-            <p>We are team of talented designers making websites with Bootstrap</p>
-            <a href="#about" class="btn-get-started">Get Started</a>
-          </div>
+    <img src="https://source.unsplash.com/featured/?fitness,women" alt="Hero Image" data-aos="fade-in" class="">
+
+    <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2>Bienvenidos / Welcome</h2>
+          <p>Descubre una vida saludable y equilibrada con tips de salud y fitness. / Discover a healthy and balanced life with health and fitness tips.</p>
+          <a href="#about" class="btn-get-started">Empezar / Get Started</a>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- /Hero Section -->
+
+  <!-- About Section -->
+  <section id="about" class="about section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Sobre Mí / About Me</h2>
+      <p>Inspirando a mujeres de todo el mundo a encontrar su mejor versión. / Inspiring women around the world to find their best version.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+        <div class="col-lg-6">
+          <img src="https://source.unsplash.com/featured/?yoga,health" class="img-fluid" alt="About Image">
+        </div>
+        <div class="col-lg-6 content">
+          <h3>Transforma tu vida / Transform Your Life</h3>
+          <p class="fst-italic">
+            "La salud y el bienestar no son una meta, son un estilo de vida. / Health and wellness are not a goal; they are a lifestyle."
+          </p>
+          <ul>
+            <li><i class="bi bi-check2-all"></i> <span>Planificación de entrenamientos personalizados. / Customized workout plans.</span></li>
+            <li><i class="bi bi-check2-all"></i> <span>Recetas saludables y deliciosas. / Healthy and delicious recipes.</span></li>
+            <li><i class="bi bi-check2-all"></i> <span>Consejos para el bienestar emocional. / Emotional wellness tips.</span></li>
+          </ul>
+          <p>
+            Acompáñame en este viaje hacia una versión más saludable y feliz de ti misma. / Join me on this journey to a healthier and happier version of yourself.
+          </p>
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+  </section><!-- /About Section -->
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About Us</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+  <!-- Why Follow Me Section -->
+  <section id="why-us" class="why-us section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>¿Por Qué Elegirme? / Why Follow Me?</h2>
+      <p>Mi pasión es motivarte a alcanzar tus objetivos. / My passion is to motivate you to achieve your goals.</p>
+    </div><!-- End Section Title -->
 
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 content">
-            <h3>Voluptatem dignissimos provident</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-            </ul>
+    <div class="container">
+
+      <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="img">
+              <img src="https://source.unsplash.com/featured/?motivation,fitness" alt="Motivation" class="img-fluid">
+              <div class="icon"><i class="bi bi-heart"></i></div>
+            </div>
+            <h2 class="title"><a href="#" class="stretched-link">Motivación / Motivation</a></h2>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              Encuentra la inspiración que necesitas para comenzar y mantener tu camino al bienestar. / Find the inspiration you need to start and stay on your wellness journey.
             </p>
           </div>
-        </div>
+        </div><!-- End Card Item -->
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="img">
+              <img src="https://source.unsplash.com/featured/?nutrition,healthy" alt="Nutrition" class="img-fluid">
+              <div class="icon"><i class="bi bi-nutrition"></i></div>
+            </div>
+            <h2 class="title"><a href="#" class="stretched-link">Nutrición / Nutrition</a></h2>
+            <p>
+              Consejos de alimentación adaptados a tus necesidades. / Nutrition tips tailored to your needs.
+            </p>
+          </div>
+        </div><!-- End Card Item -->
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="img">
+              <img src="https://source.unsplash.com/featured/?fitness,workout" alt="Fitness" class="img-fluid">
+              <div class="icon"><i class="bi bi-lightning"></i></div>
+            </div>
+            <h2 class="title"><a href="#" class="stretched-link">Entrenamiento / Training</a></h2>
+            <p>
+              Ejercicios efectivos y divertidos para cada nivel. / Fun and effective workouts for every level.
+            </p>
+          </div>
+        </div><!-- End Card Item -->
 
       </div>
 
-    </section><!-- /About Section -->
+    </div>
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section">
+  </section><!-- /Why Follow Me Section -->
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Why Us</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
 
-      <div class="container">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Contacto / Contact</h2>
+      <p>Hablemos sobre cómo puedo ayudarte. / Let’s talk about how I can help you.</p>
+    </div><!-- End Section Title -->
 
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-md-4">
-            <div class="card">
-              <div class="img">
-                <img src="{% static 'assets/img/why-us-1.jpg'%}" alt="" class="img-fluid">
-                <div class="icon"><i class="bi bi-hdd-stack"></i></div>
-              </div>
-              <h2 class="title"><a href="#" class="stretched-link">Our Mission</a></h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="img">
-                <img src="{% static 'assets/img/why-us-2.jpg'%}" alt="" class="img-fluid">
-                <div class="icon"><i class="bi bi-brightness-high"></i></div>
-              </div>
-              <h2 class="title"><a href="#" class="stretched-link">Our Plan</a></h2>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <div class="img">
-                <img src="{% static 'assets/img/why-us-3.jpg'%}" alt="" class="img-fluid">
-                <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-              </div>
-              <h2 class="title"><a href="#" class="stretched-link">Our Vision</a></h2>
-              <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-              </p>
-            </div>
-          </div><!-- End Card Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Why Us Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
+      <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
         <div class="row gy-4">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact Us</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-geo-alt"></i>
-              <h3>Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center info-item-borders">
-              <i class="bi bi-telephone"></i>
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
-              <h3>Email Us</h3>
-              <p>info@example.com</p>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
-          <div class="row gy-4">
-
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-
-              <button type="submit">Send Message</button>
-            </div>
-
+          <div class="col-md-6">
+            <input type="text" name="name" class="form-control" placeholder="Tu Nombre / Your Name" required="">
           </div>
-        </form><!-- End Contact Form -->
 
-      </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" name="email" placeholder="Tu Correo / Your Email" required="">
+          </div>
 
-    </section><!-- /Contact Section -->
+          <div class="col-md-12">
+            <textarea class="form-control" name="message" rows="6" placeholder="Mensaje / Message" required=""></textarea>
+          </div>
 
-  </main>
+          <div class="col-md-12 text-center">
+            <button type="submit">Enviar Mensaje / Send Message</button>
+          </div>
+
+        </div>
+      </form><!-- End Contact Form -->
+
+    </div>
+
+  </section><!-- /Contact Section -->
+
+</main>
