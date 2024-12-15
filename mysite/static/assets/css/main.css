@@ -517,7 +517,7 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("assets/img/hero-bg.jpg") no-repeat center center;
+  background: url("../../assets/img/hero-bg.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
 }
