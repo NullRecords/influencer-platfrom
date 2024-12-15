@@ -520,10 +520,10 @@ section,
 }
 
 .hero img {
-  position: absolute;
+  position: relative;
   inset: 0;
   display: block;
-  width: 100%;
+  width: 200px;
   height: 100%;
   object-fit: cover;
   z-index: 1;
