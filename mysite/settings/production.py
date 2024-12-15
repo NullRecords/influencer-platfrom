@@ -17,6 +17,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['eileen-app-jlxek.ondigitalocean.app']
 
+CSRF_TRUSTED_ORIGINS = ['eileen-app-jlxek.ondigitalocean.app']
+
 try:
     from .local import *
 except ImportError:
