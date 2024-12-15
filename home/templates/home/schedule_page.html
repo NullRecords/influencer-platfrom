@@ -12,13 +12,10 @@
 
 
 {% block content %}
-<main class="contenedor">
-    <h2>Schedule a Virtual or In-Person Traing & Health Session</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit Application</button>
-    </form>
+<main class="main container">
+    <h2>Schedule a Virtual or In-Person Training & Health Session</h2>
+    <p>Please use the link below to schedule your session:</p>
+    <a href="https://calendly.com/eileen@nullrecords" class="btn btn-primary">Schedule with Calendly</a>
 </main>
 {% endblock %}
 
