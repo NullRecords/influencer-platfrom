@@ -526,7 +526,7 @@ section,
   position: relative;
   inset: 0;
   display: block;
-  width: 200px;
+  width: 300px;
   object-fit: cover;
   z-index: 1;
 }
