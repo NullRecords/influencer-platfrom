@@ -24,8 +24,6 @@
     {% block social_share %}{% endblock social_share %}
     <link rel="canonical" href="{% block canonical %}{% canonical_url %}{% endblock canonical %}"/>
 
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,100italic,100,400italic,500,500italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
     {% block css %}
         <link rel='stylesheet' href="{% static 'puput/css/bootstrap.min.css' %}" type='text/css'/>
@@ -37,22 +35,15 @@
         </style>
         <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
         <link rel="stylesheet" href="{% static 'puput/css/puput.css' %}"/>
-        <!-- Favicons -->
         <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
         <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-        <!-- Vendor CSS Files -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
         <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-        <!-- Template Main CSS File -->
         <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
     {% endblock %}
 </head>
@@ -81,7 +72,6 @@
 {% endblock blog_header %}
 {% wagtailuserbar %}
     <div class="row">
-
         <div class="col-sm-4 col-md-3">
             <div class="blog_sidebar">
                 <div class="rss-sitemap">
@@ -128,6 +118,24 @@
                         {% archives_list %}
                     </ul>
                 {% endif %}
+            </div>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <div class="row">
+                {% for entry in blog_page.entries %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            {% if entry.header_image %}
+                                <img class="card-img-top" src="{{ entry.header_image.url }}" alt="{{ entry.header_image.title }}">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ entry.title }}</h5>
+                                <p class="card-text">{{ entry.description }}</p>
+                                <a href="{% pageurl entry %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
