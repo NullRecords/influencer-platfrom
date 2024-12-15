@@ -57,7 +57,7 @@ EMAIL_USE_TLS = True  # new
 
 AWS_STORAGE_BUCKET_NAME = 'eileen'
 AWS_ACCESS_KEY_ID = 'DO00MW9V6QPPJKVCGHYA'
-AWS_SECRET_ACCESS_KEY = os.environ.get("SPACES_SECRET")
+AWS_SECRET_ACCESS_KEY = '5o2ky3X8q7oosVEE+ilILtf6oyTD+zRuFe7AKQ/R2IE'
 AWS_S3_CUSTOM_DOMAIN = 'cms-static.nyc3.digitaloceanspaces.com' + "/" + AWS_STORAGE_BUCKET_NAME
 AWS_S3_ENDPOINT_URL  = 'https://cms-static.nyc3.digitaloceanspaces.com'
 
