@@ -15,7 +15,7 @@ DATABASES = {
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['eileen-app-lrlvb.ondigitalocean.app']
+ALLOWED_HOSTS = ['eileen-app-jlxek.ondigitalocean.app']
 
 try:
     from .local import *
