@@ -1,6 +1,6 @@
 {% extends "puput/base.html" %}
 
-{% load static i18n wagtailcore_tags wagtailimages_tags puput_tags social_share %}
+{% load static i18n wagtailcore_tags wagtailimages_tags puput_tags %}
 
 {% block title %}
     {% if search_term %}
@@ -43,7 +43,6 @@
 {% endblock social_share %}
 
 {% block content %}
-<main class="contenedor">
     {% with per_page=blog_page.num_entries_page %}
         {# 'paginate' tag cannot render dotted variables, so we need to create a context var #}
         {% paginate per_page entries %}
@@ -70,13 +69,9 @@
                         {{ entry.body|richtext|truncatewords_html:70 }}
                     {% endif %}
                     <div class="row">
+                        {% canonical_url entry as share_url %}
                         <ul class="social-share col-md-9">
-                            <li class="social-item">
-                               {% post_to_facebook post_url '<span><i class="fa fa-facebook"></i></span>' %}
-                            </li>
-                            <li class="social-item">
-                                {% post_to_twitter entry.title post_url '<span><i class="fa fa-twitter"></i></span>' %}
-                            </li>
+                            {% include 'puput/share_links.html' with share_url=share_url entry=entry only %}
                         </ul>
                         <div class="col-md-3">
                             <a class="blog_btn continue" href="{{ post_url }}">{% trans 'Continue reading' %} &raquo;</a>
@@ -92,5 +87,4 @@
             {% show_paginator %}
         </div>
     {% endwith %}
-</main>    
 {% endblock content %}
