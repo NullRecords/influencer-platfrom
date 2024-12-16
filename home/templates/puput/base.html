@@ -40,10 +40,12 @@
 </head>
 <body>
 {% block blog_header %}
-    <div class="about">
+    <div class="about" style="float: left; height: 120px; position: absolute; z-index: 1;">
         <a href="/">
-            <img src="{% static 'assets/img/eileen-logo-badge.png' %}" alt="home">
+            <img src="{% static 'assets/img/eileen-logo-badge.png' %}" alt="home" style="height: 100%;">
         </a>
+    </div>
+    <div style="clear: both;"></div>
         {% if blog_page.header_image %}
             <span class="image featured">
                 {% image blog_page.header_image fill-1500x120 as header_image %}
