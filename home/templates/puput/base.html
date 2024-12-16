@@ -41,6 +41,9 @@
 <body>
 {% block blog_header %}
     <div class="about">
+        <a href="/">
+            <img src="{% static 'assets/img/eileen-logo-badge.png' %}" alt="home">
+        </a>
         {% if blog_page.header_image %}
             <span class="image featured">
                 {% image blog_page.header_image fill-1500x120 as header_image %}
