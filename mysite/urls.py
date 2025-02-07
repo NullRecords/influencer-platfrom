@@ -21,7 +21,7 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     path('search/', search_views.search, name='search'),
-    path('signup/', home_views.sign_up, name='sign_up'),
+    path('sign_up/', home_views.sign_up, name='sign_up'),
     
     path('Hey/index.html', TemplateView.as_view(template_name='Hey/index.html'), name='hey-index'),  # Link to static HTML file
     path('Hey/<path:path>', TemplateView.as_view(template_name='Hey/index.html'), name='hey-static'),  # Link to static files

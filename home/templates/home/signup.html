@@ -15,7 +15,7 @@
 <main class="main container">
     <h2>Signup now and Join Devotion Fitness</h2>
     <p></p>
-    <form method="post" action="{% url 'signup' %}">
+    <form method="post" action="{% url 'sign_up' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Sign Up</button>
