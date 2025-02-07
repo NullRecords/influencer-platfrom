@@ -60,6 +60,9 @@ def send_notification_email(subject, message):
 
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django import forms
 
 def translate_audio(request):
     if request.method == 'POST' and 'audio' in request.FILES:
@@ -87,3 +90,23 @@ def translate_chat(request):
         except Exception as e:
             return JsonResponse({'success': False, 'error': str(e)})
     return JsonResponse({'success': False, 'error': 'Invalid request'})
+
+class SignUpForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
+
+def sign_up(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            login(request, user)
+            return redirect('home')  # Redirect to a success page.
+    else:
+        form = SignUpForm()
+    return render(request, 'home/signup.html', {'form': form})

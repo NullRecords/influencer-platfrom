@@ -9,6 +9,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
 from puput import urls as puput_urls
+from home import views as home_views
 
 from django.views.generic import TemplateView  # Import TemplateView
 from home.views import translate_audio, translate_chat
@@ -20,6 +21,7 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     path('search/', search_views.search, name='search'),
+    path('signup/', home_views.signup, name='signup'),
     
     path('Hey/index.html', TemplateView.as_view(template_name='Hey/index.html'), name='hey-index'),  # Link to static HTML file
     path('Hey/<path:path>', TemplateView.as_view(template_name='Hey/index.html'), name='hey-static'),  # Link to static files

@@ -95,3 +95,4 @@ class ProjectSubmission(models.Model):
     submitter_email = models.EmailField()
     project_title = models.CharField(max_length=200)
     project_description = models.TextField()
+
